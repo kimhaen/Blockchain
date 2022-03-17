@@ -39,7 +39,7 @@ Block Chain
     
 #### **하이퍼레저 툴(Tool)**     
 - 블록체인 시스템의 성능 측정, 운영, 개발을 돕는 툴
-- - Hyperledger Caliper
+  - Hyperledger Caliper
   - Hyperledger Cello
   - Hyperledger Composer
   - Hyperledger Explorer
@@ -71,6 +71,7 @@ Block Chain
 - **작업 구간별 병렬 처리**
 - **체인코드**
 - **모듈화된 디자인**
+
 
 - 채널 개념을 도입하여, 프라이버시와 기밀성 제공
 - 트랜잭션의 생성부터 합의 과정까지 단계별로 분리하여 처리 가능
