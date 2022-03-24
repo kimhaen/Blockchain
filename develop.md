@@ -77,5 +77,20 @@ Block Chain Develop
 
 ### Application 흐름
 
+![](https://d1.awsstatic.com/blockchain_assets/Hyperledgerfabricdiagram.83ce5564e344459d113343595b2152d31791f79b.png)
+- 발생된 트랜잭션을 클라이언트 SDK를 Endorsor peer에 전달
+- Endorsor peer가 트랜잭션을 체인코드를 통해 검증하고, 실행한 후 결과(R/W Set)를 클라이언트레 반환
+- 반환된 응답을 Orderer에 전달
+- Orderer(kafka 등)는 전달된 트랜잭션을 전달받고 트랜잭션이 검증되면 모든 Peer에 전달된다.
+- WorldStateDB에 값이 저장되고 원장이 업데이트 된다.
+
+- 
 ![](https://miro.medium.com/max/1400/1*2m8OvLXa6leRE52Usiuh-Q.png)
 
+Chaincode
+
+- hyperledger fabric의 smartcontract
+- 체인코드는 Endorsing Peer 프로세스로 부터 격리된 안전한 Docker Container에서 실행됨
+- Application에 의해 전송된 트랜잭션을 통해 초기화하고 원장의 상태를 관리
+- 체인코드에 의해 생성된 원장 상태는 해당 체인코드로만 범위가 지정되어 다른 체인코드에 직접 Acess할 수 없지만 접근권한이 주어지면 동일한 네트워크안에 다른 체인코드를 호출할 수 있음
+-  
